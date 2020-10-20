@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Index Page{% endblock %}
+{% block content %}
+    {% for value in siren %}
+        <h3>Type of signalling: {{ value.type }}</h3>
+        <h3>Address with used signalling: {{ value.address }}</h3>
+        <h3>Latitude: {{ value.latitude }}''</h3>
+        <h3>Longitude: {{ value.longitude }}''</h3>
+        <h3>Area coverage: {{ value.coverage_area }} m.</h3>
+    <br>
+    {% endfor %}
+{% endblock %}

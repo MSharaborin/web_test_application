@@ -7,8 +7,8 @@ class Signalling(models.Model):
     """
 
     CHOICES = (
-        ('1', 'siren'),
-        ('2', 'speaker'),
+        ('siren', 'siren'),
+        ('speaker', 'speaker'),
     )
 
     type = models.CharField(choices=CHOICES, max_length=25, verbose_name='Type_of_signalling',)
