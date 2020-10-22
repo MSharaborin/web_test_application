@@ -1,21 +1,12 @@
+<!-- templates/detail_page.html -->
 {% extends 'base.html' %}
-{% block title %}Add objects bd{% endblock %}
+
 {% block content %}
-{% if signalling %}
-    <form action="." method="post">
-        {% csrf_token %}
-        <input name="type" type="text" value="{{ signalling.type  }}">
-        <input name="address" type="text" value="{{ signalling.address  }}">
-        <input name="latitude" value="{{ signalling.latitude  }}">
-        <input name="longitude" value="{{ signalling.longitude  }}">
-        <input name="coverage_area" value="{{ signalling.coverage_area  }}">
-        <button type="submit">Ок</button>
-    </form>
-{% else %}
-    <form action="." method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Ок</button>
-    </form>
-{% endif %}
+  <div>
+    <h2>{{ signalling.type }}</h2>
+    <p>{{ signalling.address }}</p>
+  </div>
+
+  <button type="submit"><a href="{% url 'update_url' signalling.pk %}">Edit Siren</a></button>
+  <button type="submit"><a href="{% url 'delete_url' signalling.pk %}">Delete Siren</a></button>
 {% endblock %}

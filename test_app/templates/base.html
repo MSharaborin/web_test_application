@@ -5,7 +5,12 @@
     <title>{% block title%}Base template{% endblock %}</title>
 </head>
 <body>
-<h1>Test Application:</h1>
+<div>
+    <h1><a href="{% url 'index_url' %}">Home Page</a></h1>
+</div>
+<div>
+    <button type="submit"><a href="{% url 'create_url' %}">New Siren</a></button>
+</div>
 {% block content %}
 {% endblock %}
 </body>
